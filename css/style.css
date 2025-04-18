@@ -40,6 +40,53 @@ div.sidebar {
   -webkit-backdrop-filter: blur(10px);
 }
 
+div.right-content {
+  display: grid;
+}
+div.right-content div.command-content {
+  margin: 2em;
+}
+div.right-content div.command-content p.name {
+  font-family: "Syne";
+  font-weight: 800;
+}
+div.right-content div.command-content div.desc p.cog {
+  font-family: "IBM Plex Mono";
+  font-size: 1.5em;
+  padding: 0.5em;
+  font-style: italic;
+}
+div.right-content div.command-content div.desc p.cog::before {
+  font-family: "Syne";
+  content: "|// category -> ";
+  font-weight: 900;
+  font-style: normal;
+}
+div.right-content div.command-content div.desc p.help {
+  margin-top: 3em;
+  padding: 0.5em;
+  border: 0.2em #F4BA23 dashed;
+  border-radius: 0.5em;
+  min-width: 40rem;
+  max-width: 60rem;
+}
+div.right-content div.command-content div.desc p.help::before {
+  margin-bottom: -2.5rem;
+  display: block;
+  padding: 0.9em;
+  background-color: #F4BA23;
+  border-radius: 100px;
+  font-family: "Syne";
+  font-size: 0.9em;
+  content: "help info: ";
+  justify-self: start;
+  color: #00155E;
+  position: relative;
+  top: -50px;
+  font-weight: 900;
+  font-style: normal;
+}
+
 div.centered-left-margin {
   margin-top: 50vh;
   margin-left: 3rem;
@@ -58,13 +105,18 @@ div.sidebar a {
   margin: 0.5em 0.6em;
   border-radius: 0.5em;
 }
-div.sidebar a, div.sidebar p {
+div.sidebar a,
+div.sidebar p {
   display: block;
   padding: 0.7em;
   font-family: "IBM Plex Mono";
   font-size: 1em;
   color: #F4BA23;
   text-align: center;
+}
+div.sidebar a.svg-logo {
+  background-color: transparent;
+  padding: 1.1em;
 }
 div.sidebar p.sidebar-title {
   font-family: "Syne";
@@ -100,10 +152,6 @@ a, p {
   font-family: "IBM Plex Sans";
   color: #F4BA23;
   font-size: 1.5em;
-}
-
-img.svg-logo {
-  padding: 1.1em;
 }
 
 /*# sourceMappingURL=style.css.map */
