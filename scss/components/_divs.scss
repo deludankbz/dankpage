@@ -1,4 +1,71 @@
+%baseGlassBlur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 div.centered-left-margin {
   margin-top: 50vh;
   margin-left: 3rem;
+}
+
+// div.right-content {}
+
+div.sidebar {
+  @extend %baseGlassBlur;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: calc($def-margin*0.5);
+  width: calc($def-margin*8);
+  max-height: calc(100vh - $def-margin);
+
+  background: transparentize($cc-dark-blue, .3) url('noise.png');
+
+  a {
+    background-color: $cc-yellow;
+    margin: calc($def-margin*0.25) calc($def-margin*0.3);
+    border-radius: calc($def-margin*0.25);
+  }
+
+  a, p {
+    display: block;
+    padding: calc($def-margin*0.35);
+
+    font-family: $mono-font;
+    font-size: calc($font-size*0.5);
+
+    color: $cc-yellow;
+    text-align: center;
+  }
+
+  p.sidebar-title{
+    font-family: 'Syne';
+    color: $cc-yellow;
+    font-weight: 800;
+  }
+
+  a.side-item {
+    text-align: left; 
+
+    background-color: $cc-dark-blue;
+    border: 0.1rem $cc-yellow solid;
+  }
+
+  a.side-bottom-item {
+    margin-top: auto;
+    margin-bottom: 1;
+    
+    background-color: $cc-dark-blue;
+    color: $cc-yellow;
+
+    border: 0;
+    border-radius: 0;
+    
+    text-align: center;
+
+    p { 
+      color: $cc-yellow;
+    }
+  }
 }

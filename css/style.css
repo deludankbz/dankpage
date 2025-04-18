@@ -2,6 +2,20 @@
 /* Margins */
 /* Color vars */
 @font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/IBM_Plex_Mono/IBMPlexMono-Italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
   font-family: "IBM Plex Sans";
   src: url("../fonts/IBM_Plex_Sans/IBMPlexSans-VariableFont_wdth-wght.ttf");
 }
@@ -15,7 +29,8 @@
   src: url("../fonts/Syne/Syne-VariableFont_wght.ttf");
 }
 body {
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
 }
 
 body {
@@ -23,22 +38,75 @@ body {
   background-color: #00155E;
 }
 
+div.sidebar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 div.centered-left-margin {
   margin-top: 50vh;
   margin-left: 3rem;
+}
+
+div.sidebar {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  width: 16em;
+  max-height: calc(100vh - 2em);
+  background: rgba(0, 21, 94, 0.7) url("noise.png");
+}
+div.sidebar a {
+  background-color: #F4BA23;
+  margin: 0.5em 0.6em;
+  border-radius: 0.5em;
+}
+div.sidebar a, div.sidebar p {
+  display: block;
+  padding: 0.7em;
+  font-family: "IBM Plex Mono";
+  font-size: 1em;
+  color: #F4BA23;
+  text-align: center;
+}
+div.sidebar p.sidebar-title {
+  font-family: "Syne";
+  color: #F4BA23;
+  font-weight: 800;
+}
+div.sidebar a.side-item {
+  text-align: left;
+  background-color: #00155E;
+  border: 0.1rem #F4BA23 solid;
+}
+div.sidebar a.side-bottom-item {
+  margin-top: auto;
+  margin-bottom: 1;
+  background-color: #00155E;
+  color: #F4BA23;
+  border: 0;
+  border-radius: 0;
+  text-align: center;
+}
+div.sidebar a.side-bottom-item p {
+  color: #F4BA23;
 }
 
 h1, h2, h3, h4 {
   font-family: "Syne";
   font-weight: 800;
   color: #F4BA23;
-  font-size: 3rem;
+  font-size: 2em;
 }
 
-p {
+a, p {
   font-family: "IBM Plex Sans";
   color: #F4BA23;
-  font-size: 2.25rem;
+  font-size: 1.5em;
+}
+
+img.svg-logo {
+  padding: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */
