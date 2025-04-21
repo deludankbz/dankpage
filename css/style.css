@@ -47,8 +47,18 @@ div.right-content div.command-content {
   margin: 2em;
 }
 div.right-content div.command-content p.name {
+  padding: 0.5em;
   font-family: "Syne";
   font-weight: 800;
+}
+div.right-content div.command-content div.desc {
+  border-style: none none dotted;
+  border-width: 1em;
+  border-color: #00155E;
+  transition: border-color 0.1s;
+}
+div.right-content div.command-content div.desc:hover {
+  border-color: #F4BA23;
 }
 div.right-content div.command-content div.desc p.cog {
   font-family: "IBM Plex Mono";

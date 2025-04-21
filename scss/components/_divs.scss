@@ -11,11 +11,21 @@ div.right-content {
     margin: $def-margin;
 
     p.name {
+      padding: calc($def-margin*0.25);
       font-family: $header-font;
       font-weight: 800;
     }
 
     div.desc {
+      border-style: none none dotted;
+      border-width: calc($font-size*0.5);
+      border-color: $cc-dark-blue;
+      transition: border-color 0.1s;
+
+      &:hover {
+        border-color: $cc-yellow;
+      }
+
       p.cog {
         font-family: $mono-font;
         font-size: calc($font-size*0.75);
@@ -31,7 +41,6 @@ div.right-content {
       }
 
       p.help {
-
         margin-top: calc($def-margin*1.5);
         padding: calc($def-margin*0.25);
         border: calc($def-margin*0.1) $cc-yellow dashed;
