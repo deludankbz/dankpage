@@ -3,75 +3,9 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
-div.right-content {
-  display: grid;
-
-  div.command-content {
-
-    margin: $def-margin;
-
-    p.name {
-      padding: calc($def-margin*0.25);
-      font-family: $header-font;
-      font-weight: 800;
-    }
-
-    div.desc {
-      border-style: none none dotted;
-      border-width: calc($font-size*0.5);
-      border-color: $cc-dark-blue;
-      transition: border-color 0.1s;
-
-      &:hover {
-        border-color: $cc-yellow;
-      }
-
-      p.cog {
-        font-family: $mono-font;
-        font-size: calc($font-size*0.75);
-        padding: calc($def-margin*0.25);
-        font-style: italic;
-
-        &::before {
-          font-family: $header-font;
-          content: "|// category -> ";
-          font-weight: 900;
-          font-style: normal;
-        }
-      }
-
-      p.help {
-        margin-top: calc($def-margin*1.5);
-        padding: calc($def-margin*0.25);
-        border: calc($def-margin*0.1) $cc-yellow dashed;
-        border-radius: calc($def-margin*0.25);
-        min-width: 40rem;
-        max-width: 60rem;
-
-        &::before {
-          margin-bottom: -2.5rem;
-          display: block;
-          padding: calc($def-margin*0.45);
-
-          background-color: $cc-yellow;
-          border-radius: 100px;
-
-          font-family: $header-font;
-          font-size: calc($font-size*0.45);
-
-          content: "help info: ";
-          justify-self: start;
-          color: $cc-dark-blue;
-
-          position: relative;
-          top: -50px;
-
-          font-weight: 900;
-          font-style: normal;
-        }
-      }
-    }
-  }
+div.upper-content {
+  margin: calc($def-margin*4) $def-margin;
+  h2 { margin: 0 }
 }
 
 div.centered-left-margin {
@@ -123,9 +57,18 @@ div.sidebar {
 
   a.side-item {
     text-align: left; 
+    background: transparentize($cc-dark-blue, .3) url('noise.png');
 
     background-color: $cc-dark-blue;
     border: 0.1rem $cc-yellow solid;
+
+    transition: background-color 0.2s;
+    transition: color 0.2s;
+
+    &:hover {
+      background-color: $cc-yellow;
+      color: $cc-dark-blue;
+    }
   }
 
   a.side-bottom-item {
@@ -145,3 +88,90 @@ div.sidebar {
     }
   }
 }
+
+div.right-content {
+  display: grid;
+
+  div.command-content {
+
+    margin: $def-margin;
+
+    p.name {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      
+      margin-bottom: 0;
+      padding: calc($def-margin*0.25);
+      font-family: $header-font;
+      font-weight: 800;
+
+      span.aliases {
+        &:empty { display: none; }
+        &::before { content: " aliaes: "; }
+        padding-left: calc($def-margin*0.5);
+        font-family: $mono-font;
+        font-size: calc($font-size*0.3);
+      }
+    }
+
+    div.desc {
+      border-style: none none dotted;
+      border-width: calc($font-size*0.5);
+      border-color: $cc-dark-blue;
+      transition: border-color 0.1s;
+
+      &:hover {
+        border-color: $cc-yellow;
+      }
+
+      p.cog {
+        font-family: $mono-font;
+        font-size: calc($font-size*0.75);
+        margin-top: 0;
+        padding: calc($def-margin*0.25);
+        font-style: italic;
+
+        &::before {
+          font-family: $header-font;
+          content: "|// category -> ";
+          font-weight: 900;
+          font-style: normal;
+        }
+      }
+
+      p.help {
+        margin-top: calc($def-margin*1.0);
+        padding: calc($def-margin*0.25);
+        border: calc($def-margin*0.1) $cc-yellow dashed;
+        border-radius: calc($def-margin*0.25);
+        min-width: 40rem;
+        max-width: 60rem;
+
+        &::before {
+          margin-bottom: -2.5rem;
+          display: block;
+          padding: calc($def-margin*0.45);
+
+          background-color: $cc-yellow;
+          border-radius: 100px;
+
+          font-family: $header-font;
+          font-size: calc($font-size*0.45);
+
+          content: "help info: ";
+          justify-self: start;
+          color: $cc-dark-blue;
+
+          position: relative;
+          top: -50px;
+
+          font-weight: 900;
+          font-style: normal;
+        }
+      }
+    }
+  }
+}
+
+

@@ -40,61 +40,11 @@ div.sidebar {
   -webkit-backdrop-filter: blur(10px);
 }
 
-div.right-content {
-  display: grid;
+div.upper-content {
+  margin: 8em 2em;
 }
-div.right-content div.command-content {
-  margin: 2em;
-}
-div.right-content div.command-content p.name {
-  padding: 0.5em;
-  font-family: "Syne";
-  font-weight: 800;
-}
-div.right-content div.command-content div.desc {
-  border-style: none none dotted;
-  border-width: 1em;
-  border-color: #00155E;
-  transition: border-color 0.1s;
-}
-div.right-content div.command-content div.desc:hover {
-  border-color: #F4BA23;
-}
-div.right-content div.command-content div.desc p.cog {
-  font-family: "IBM Plex Mono";
-  font-size: 1.5em;
-  padding: 0.5em;
-  font-style: italic;
-}
-div.right-content div.command-content div.desc p.cog::before {
-  font-family: "Syne";
-  content: "|// category -> ";
-  font-weight: 900;
-  font-style: normal;
-}
-div.right-content div.command-content div.desc p.help {
-  margin-top: 3em;
-  padding: 0.5em;
-  border: 0.2em #F4BA23 dashed;
-  border-radius: 0.5em;
-  min-width: 40rem;
-  max-width: 60rem;
-}
-div.right-content div.command-content div.desc p.help::before {
-  margin-bottom: -2.5rem;
-  display: block;
-  padding: 0.9em;
-  background-color: #F4BA23;
-  border-radius: 100px;
-  font-family: "Syne";
-  font-size: 0.9em;
-  content: "help info: ";
-  justify-self: start;
-  color: #00155E;
-  position: relative;
-  top: -50px;
-  font-weight: 900;
-  font-style: normal;
+div.upper-content h2 {
+  margin: 0;
 }
 
 div.centered-left-margin {
@@ -135,8 +85,15 @@ div.sidebar p.sidebar-title {
 }
 div.sidebar a.side-item {
   text-align: left;
+  background: rgba(0, 21, 94, 0.7) url("noise.png");
   background-color: #00155E;
   border: 0.1rem #F4BA23 solid;
+  transition: background-color 0.2s;
+  transition: color 0.2s;
+}
+div.sidebar a.side-item:hover {
+  background-color: #F4BA23;
+  color: #00155E;
 }
 div.sidebar a.side-bottom-item {
   margin-top: auto;
@@ -149,6 +106,79 @@ div.sidebar a.side-bottom-item {
 }
 div.sidebar a.side-bottom-item p {
   color: #F4BA23;
+}
+
+div.right-content {
+  display: grid;
+}
+div.right-content div.command-content {
+  margin: 2em;
+}
+div.right-content div.command-content p.name {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 0;
+  padding: 0.5em;
+  font-family: "Syne";
+  font-weight: 800;
+}
+div.right-content div.command-content p.name span.aliases {
+  padding-left: 1em;
+  font-family: "IBM Plex Mono";
+  font-size: 0.6em;
+}
+div.right-content div.command-content p.name span.aliases:empty {
+  display: none;
+}
+div.right-content div.command-content p.name span.aliases::before {
+  content: " aliaes: ";
+}
+div.right-content div.command-content div.desc {
+  border-style: none none dotted;
+  border-width: 1em;
+  border-color: #00155E;
+  transition: border-color 0.1s;
+}
+div.right-content div.command-content div.desc:hover {
+  border-color: #F4BA23;
+}
+div.right-content div.command-content div.desc p.cog {
+  font-family: "IBM Plex Mono";
+  font-size: 1.5em;
+  margin-top: 0;
+  padding: 0.5em;
+  font-style: italic;
+}
+div.right-content div.command-content div.desc p.cog::before {
+  font-family: "Syne";
+  content: "|// category -> ";
+  font-weight: 900;
+  font-style: normal;
+}
+div.right-content div.command-content div.desc p.help {
+  margin-top: 2em;
+  padding: 0.5em;
+  border: 0.2em #F4BA23 dashed;
+  border-radius: 0.5em;
+  min-width: 40rem;
+  max-width: 60rem;
+}
+div.right-content div.command-content div.desc p.help::before {
+  margin-bottom: -2.5rem;
+  display: block;
+  padding: 0.9em;
+  background-color: #F4BA23;
+  border-radius: 100px;
+  font-family: "Syne";
+  font-size: 0.9em;
+  content: "help info: ";
+  justify-self: start;
+  color: #00155E;
+  position: relative;
+  top: -50px;
+  font-weight: 900;
+  font-style: normal;
 }
 
 h1, h2, h3, h4 {
